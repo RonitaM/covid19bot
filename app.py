@@ -86,7 +86,7 @@ def processRequest(req):
     elif intent == "send_report_to_email":
         fulfillmentText = result.get("fulfillmentText")
         log.saveConversations(sessionID, "Sure send email", fulfillmentText, intent, db)
-        val = log.getcasesForEmail("country", "", db)
+        val = log.getcasesForEmail("India", "", db)
         print("===>",val)
         prepareEmail([cust_name, cust_contact, cust_email,val])
     elif intent == "totalnumber_cases":
