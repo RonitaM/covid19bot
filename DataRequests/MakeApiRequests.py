@@ -6,7 +6,7 @@ class Api:
 
     def makeApiRequestForCounrty(self, country_name):
 
-        url = "https://covid-193.p.rapidapi.com/countries"
+        url = "https://covid-193.p.rapidapi.com/statistics"
         querystring={"country":country_name}
 
         headers = {
