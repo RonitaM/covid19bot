@@ -22,7 +22,7 @@ class GMailClient:
         msg['To'] = contacts[2]
 
         value = contacts[3]
-        values = value.get("cases")
+        values = value.get("Cases")
         print(values)
         msg.set_content("Hello Mr. {} Here is your Covid 19 Report PFA".format(contacts[0]))
         #print(contacts[2])
