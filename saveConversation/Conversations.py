@@ -31,5 +31,6 @@ class Log:
 
     def getcasesForEmail(self, search,botmessage,dbConn):
         records = dbConn.cases_records
+        print(records)
         return records.find_one({'search': search})
 
