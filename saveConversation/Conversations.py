@@ -9,7 +9,7 @@ class Log:
         self.date = self.now.date()
         self.current_time = self.now.strftime("%H:%M:%S")
 
-        #db = dbConn['Covid-19DB']  # connecting to the database called crawlerD
+        db = dbConn['Covid-19db']  # connecting to the database called crawlerD
         mydict = {"sessionID":sessionID,"User Intent" : intent ,"User": usermessage, "Bot": botmessage, "Date": str(self.date) + "/" + str(self.current_time)}
 
         #table = db[sessionID]
@@ -25,11 +25,11 @@ class Log:
         cases_dict = {"search":search,"cases": botmessage}
         newvalues = {"$set": cases_dict}
 
-        records = dbConn.cases_records
+        records = dbConn.chat_records
         records.update_one(myquery, newvalues)
         #records.insert_one(cases_dict)
 
     def getcasesForEmail(self, search,botmessage,dbConn):
-        records = dbConn.cases_records
+        records = dbConn.chat_records
         return records.find_one({'search': search})
 
