@@ -31,7 +31,8 @@ class Log:
 
     def getcasesForEmail(self, search,botmessage,dbConn):
         records = dbConn.chat_records
-        print(records.find_on({'search':search}))
+        re=records.find_on({'search':search})
+        print(re)
         print(search)
         return records.find_one({'search': search})
 
