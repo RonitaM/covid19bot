@@ -20,7 +20,7 @@ class GMailClient:
         msg['Subject'] = 'Detailed Covid-19 Report!'
         msg['From'] = EMAIL_ADDRESS
         msg['To'] = contacts[2]
-
+        print(contacts)
         value = contacts[3]
         values = value.get("cases")
         #values=value
